@@ -1,0 +1,13 @@
+{
+  "name": "omp-tweaks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small extensions for Oh My Pi",
+  "type": "module",
+  "license": "MIT",
+  "omp": {
+    "extensions": [
+      "./extensions/user-message-timestamp.ts"
+    ]
+  }
+}
