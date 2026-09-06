@@ -1,6 +1,6 @@
 # omp-tweaks
 
-Small, standalone extensions for [Oh My Pi](https://github.com/can1357/oh-my-pi).
+Small, standalone extensions and skills for [Oh My Pi](https://github.com/can1357/oh-my-pi).
 
 ## Extensions
 
@@ -15,6 +15,12 @@ Small, standalone extensions for [Oh My Pi](https://github.com/can1357/oh-my-pi)
 The value is derived from the message's stored timestamp. The extension changes only the outgoing LLM context: the visible prompt and persisted session message remain unchanged. Images, non-user messages, and messages without a finite timestamp are preserved.
 
 OMP discovers extensions when a process starts. Start a new OMP process after installing or updating this package; an already-running process keeps its startup snapshot.
+
+## Skills
+
+### Agent orchestration
+
+[`skills/agent-orchestration/SKILL.md`](skills/agent-orchestration/SKILL.md) provides a self-contained OMP operating pattern for bounded work: an executive owns scope, one conductor owns delivery, focused workers handle independent slices, and reviewers remain advisory. It includes role setup, handoff templates, dependency-aware fan-out and isolation guidance, evidence requirements, and graceful versus immediate stop semantics.
 
 ## Install
 
@@ -31,7 +37,7 @@ extensions:
   - ~/projects/omp-tweaks
 ```
 
-OMP resolves the entries declared in `package.json` under `omp.extensions`. Each tweak is a separate entry, so additional extensions can be added without combining their implementations.
+OMP resolves the entries declared in `package.json` under `omp.extensions` and discovers the package's `skills/` directory. Each tweak remains a separate entry, so additional extensions or skills can be added without combining their implementations.
 
 ## License
 
